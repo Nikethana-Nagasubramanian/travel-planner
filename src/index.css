@@ -11,6 +11,9 @@ html, body {
 
 .container {
   margin: 45px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 header {
@@ -67,11 +70,6 @@ article.journal-entry .main-image {
 .info-container a:visited {
   color: #918E9B;
 }
-
-/* .info-container h2.entry-title {
-  margin-top: 7px;
-  margin-bottom: 17px;
-} */
 
 .info-container p.trip-dates {
   font-weight: bold;

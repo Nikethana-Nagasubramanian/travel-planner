@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: whitesmoke;
+  align-items: center;
+}
+
+.joke-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+}
+
+.joke-card > h2, h3{
+  margin-block: 2px;
+}
