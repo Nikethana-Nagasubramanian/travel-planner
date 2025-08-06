@@ -1,5 +1,5 @@
 import { GlobeHemisphereWest } from 'phosphor-react';
-import '../src/index.css';
+import '../../src/index.css';
 
 export default function Header() {
     return (

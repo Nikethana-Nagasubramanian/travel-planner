@@ -1,6 +1,6 @@
-import Header from "../components/travel-journal-components/Header.jsx";
-import Entry from "../components/travel-journal-components/Entry.jsx";
-import data from "./travel-journal-project/data.js";
+import Header from "../../components/travel-journal-components/Header.jsx";
+import Entry from "../../components/travel-journal-components/Entry.jsx";
+import data from "./data.js";
 
 export default function App() {
     const entryElements = data.map((entry)=> {

@@ -1,4 +1,4 @@
-import '../src/index.css';
+import '../../src/index.css';
 import { MapPin } from 'phosphor-react';
 
 export default function Entry(props) {
