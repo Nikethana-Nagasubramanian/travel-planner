@@ -1,13 +1,26 @@
-import Jokes from "../../components/components-f/Jokes"
-import jokesData from "./f-jokes"
+import padsData from "./pads"
+import React from "react"
+import Pads from "../../components/for-understanding/Pads"
+
 export default function App() {
-     const jokeElements = jokesData.map((joke) => {
-        return <Jokes setup={joke.setup}
-        punchline={joke.punchline}/>
-     })
+
+    const [pads, setPads] = React.useState(padsData)
+
+    function toggle(id) {
+        setPads(prevPads => prevPads.map(item => {
+            return item.id === id ? {...item, on: !item.on} : item
+        }))
+    }
+
+    const elements = pads.map((pad) => {
+      return (<Pads key={pad.id} {...pad} toggleFn = {toggle} id = {pad.id}/>)
+    })
+
     return (
         <main>
-            {jokeElements}
+            <div className="pad-container">
+                {elements}
+            </div>
         </main>
     )
 }
