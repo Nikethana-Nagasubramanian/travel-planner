@@ -8,8 +8,9 @@ export default function IngredientsList(props) {
     return (
         <section>
                 <h2>Ingredients on hand:</h2>
+                <p>Add minimum 3 ingredients..</p>
                 <ul className="ingredients-list" aria-live="polite">{ingredientsList}</ul>
-                {(props.ingredients.length > 3) && 
+                {(props.ingredients.length > 2) && 
                     <div className="get-recipe-container">
                         <div>
                             <h3>Ready for a recipe?</h3>
