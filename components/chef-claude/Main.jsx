@@ -7,7 +7,7 @@ export default function Main() {
 
     const [isLoading, setIsLoading] = React.useState(false)
 
-    const [ingredients, setIngredients] = React.useState(["Ginger", "Garlic", "Kidney beans", "Bay leaf"])
+    const [ingredients, setIngredients] = React.useState([])
 
     const [aiRecipe, setAiRecipe] = React.useState()
 
@@ -31,7 +31,7 @@ export default function Main() {
             setIsLoading(false)
         }
     }
-    
+
     return(
         <main>
             <form action={addIngredient} className = "add-ingredient-form">
