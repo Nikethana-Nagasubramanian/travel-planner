@@ -34,6 +34,7 @@ export default function Main() {
 
     return(
         <main>
+            <p>Add minimum 3 ingredients and add them one by one</p>
             <form action={addIngredient} className = "add-ingredient-form">
                 <input 
                 type="text"
