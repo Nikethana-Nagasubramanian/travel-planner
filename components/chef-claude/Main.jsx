@@ -6,10 +6,16 @@ import { getRecipeFromMistral } from "../../src/chef-claude/ai"
 export default function Main() {
 
     const [isLoading, setIsLoading] = React.useState(false)
-
     const [ingredients, setIngredients] = React.useState([])
-
     const [aiRecipe, setAiRecipe] = React.useState()
+
+    const recipeSection = React.useRef(null)
+
+    React.useEffect( () => {
+        if (aiRecipe !== "" && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView({behavior: "smooth"})
+        }
+    }, [aiRecipe])
 
     function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
@@ -17,12 +23,11 @@ export default function Main() {
             [...prevIngredientList, newIngredient ]
         )
     }
+
     async function getRecipe(event) {
         setIsLoading(true)
         try {
-            console.log('Getting recipe for ingredients:', ingredients); // Debug log
             const recipeMarkdown = await getRecipeFromMistral(ingredients);
-            console.log('Recipe received:', recipeMarkdown); // Debug log
             setAiRecipe(recipeMarkdown)
         } catch (error) {
             console.error('Error getting recipe:', error);
@@ -34,6 +39,7 @@ export default function Main() {
 
     return(
         <main>
+            <p>Add minimum 3 ingredients and add them one by one</p>
             <form action={addIngredient} className = "add-ingredient-form">
                 <input 
                 type="text"
@@ -45,6 +51,7 @@ export default function Main() {
             </form>
             {(ingredients.length > 0) && 
                 <IngredientsList 
+                    ref = {recipeSection}
                     ingredients={ingredients} 
                     getRecipe={getRecipe}
                     isLoading={isLoading}
