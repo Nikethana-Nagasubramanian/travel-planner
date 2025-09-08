@@ -10,12 +10,19 @@ export default function Main() {
     const [aiRecipe, setAiRecipe] = React.useState()
 
     const recipeSection = React.useRef(null)
+    const inputRef = React.useRef(null)
 
     React.useEffect( () => {
         if (aiRecipe !== "" && recipeSection.current !== null) {
             recipeSection.current.scrollIntoView({behavior: "smooth"})
         }
     }, [aiRecipe])
+
+    React.useEffect( () => {
+        if (inputRef.current) {
+            inputRef.current.focus()
+        }
+    }, [])
 
     function addIngredient(formData) {
         const newIngredient = formData.get("ingredient")
@@ -42,6 +49,7 @@ export default function Main() {
             <p>Add minimum 3 ingredients and add them one by one</p>
             <form action={addIngredient} className = "add-ingredient-form">
                 <input 
+                ref = {inputRef}
                 type="text"
                 placeholder="Oregano, Cilantro,... add anything!"
                 aria-label="Add ingredient"
