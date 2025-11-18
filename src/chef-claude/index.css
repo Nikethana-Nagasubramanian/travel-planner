@@ -169,6 +169,7 @@ ul.ingredients-list > li {
 .suggested-recipe-container h2 {
   color: #0e0e0f;
   margin-top: 0;
+  width: 100%;
 }
 
 .suggested-recipe-container h3,
@@ -176,19 +177,62 @@ ul.ingredients-list > li {
   color: #0e0e0f;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+  width: 100%;
 }
 
 .suggested-recipe-container ul li, 
 .suggested-recipe-container ol li {
   margin-bottom: 8px;
+  width: 100%;
 }
 
 .suggested-recipe-container p {
   margin-bottom: 1rem;
   font-size: 16px;
+  width: 100%;
 }
 
-/* Tablet styles - 768px and up */
+.suggested-recipe-container {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.suggested-recipe-container > * {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.suggested-recipe-container pre {
+  max-width: 100%;
+  overflow-x: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.suggested-recipe-container code {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.suggested-recipe-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.suggested-recipe-container table {
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+.suggested-recipe-container blockquote {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
 @media (min-width: 768px) {
   main {
     padding: 30px;
